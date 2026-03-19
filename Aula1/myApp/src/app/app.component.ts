@@ -7,12 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myApp';
-  count = 0;
-
-  foiClicado = () => {
-    this.count++;
-    console.log("aaa");
-    
+  
+  nome = "Juluba";
+  inputValueChanged = (value: string) => {
+    this.nome = value
   }
+  
+  
+  // count = 0;
+  // foiClicado = () => {
+  //   this.count++;
+  //   console.log("aaa");
+  // }
 }
 

@@ -1,1 +1,8 @@
-<input type="text" class="caixa-input" placeholder="escreva agui">
+<div class="input-container">
+    <label>Nome: </label>
+    <input 
+        type="text" 
+        [value]="Value"
+        (input)="onInputChange($event)"
+        >
+</div>

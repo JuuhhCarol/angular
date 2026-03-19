@@ -1,0 +1,43 @@
+._produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+
+._produto {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    width: 22%;         
+    background: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+._produto img {
+    width: 100%;           
+    height: 180px;        
+    border-radius: 5px;
+    margin-bottom: 5px;
+    object-fit: cover;     
+    object-position: center; 
+}
+
+
+._produto p:first-child {
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 0.85rem;
+}
+
+
+._produto p:last-child {
+    color: green;
+    font-weight: bold;
+    font-size: 0.8rem;
+}

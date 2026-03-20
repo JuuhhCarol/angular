@@ -7,9 +7,22 @@ import MockFood, { Icomidas } from './card-comida/comida.mock';
   styleUrls: ['./comida-page.component.css']
 })
 export class ComidaPageComponent {
-  protected produtos: Icomidas[] = [];
+
+  produtos: Icomidas[] = [];
+
+  modalAberto = false;
+  comidaSelecionada!: Icomidas;
 
   constructor() {
     this.produtos = MockFood;
+  }
+
+  abrirModal(comida: Icomidas) {
+    this.comidaSelecionada = comida;
+    this.modalAberto = true;
+  }
+
+  fecharModal() {
+    this.modalAberto = false;
   }
 }

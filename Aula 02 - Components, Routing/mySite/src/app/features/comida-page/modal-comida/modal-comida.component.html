@@ -1,0 +1,17 @@
+<div class="overlay" *ngIf="aberto">
+  <div class="modal">
+
+    <button class="close" (click)="fecharModal()">×</button>
+
+    <h2>{{ comida?.name }}</h2>
+    
+    <p><strong>Restaurante:</strong> {{ comida?.storeName }}</p>
+    <p><strong>Bairro:</strong> {{ comida?.neighborhood }}</p>
+
+    <p><strong>Tempo de entrega estimado:</strong> {{ comida?.deliveryTime }}</p>
+    <p><strong>Nota do prato:</strong> ⭐ {{ comida?.rating }}</p>
+
+    <p><strong>Preço:</strong> R$ {{ comida?.price }}</p>
+
+  </div>
+</div>

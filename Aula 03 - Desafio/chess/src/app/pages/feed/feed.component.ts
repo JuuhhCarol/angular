@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { CardService, Card } from '../../services/card.service';
+import { Component } from '@angular/core';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-feed',
-  templateUrl: './feed.component.html'
+  templateUrl: './feed.component.html',
+  styleUrls: ['./feed.component.css']
 })
-export class FeedComponent implements OnInit {
+export class FeedComponent {
+  imagem: string = '';
+  texto: string = '';
 
-  cards: Card[] = [];
+  constructor(public postService: PostService) {}
 
-  constructor(private cardService: CardService) {}
+  publicar() {
+    if (!this.imagem && !this.texto) return;
 
-  ngOnInit(): void {
-    this.cards = this.cardService.getCards();
+    this.postService.criarPost({
+      imagem: this.imagem,
+      texto: this.texto
+    });
+
+    // limpa inputs
+    this.imagem = '';
+    this.texto = '';
   }
 }

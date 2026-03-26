@@ -1,4 +1,4 @@
 <div class="card">
-  <img [src]="image" alt="{{ title }}">
-  <h3>{{ title }}</h3>
+  <img *ngIf="imagem" [src]="imagem" alt="Post Image" />
+  <p>{{ texto }}</p>
 </div>

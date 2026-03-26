@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './pages/register/register.component'; // rota da tela de cadastro
-import { FeedComponent } from './pages/feed/feed.component'; // futuramente feed
+import { RegisterComponent } from './pages/register/register.component';
+import { FeedComponent } from './pages/feed/feed.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'register', pathMatch: 'full' }, // padrão abre registro
-  { path: 'register', component: RegisterComponent },
-  { path: 'feed', component: FeedComponent } // futuramente
+  { path: '', component: RegisterComponent },
+  { path: 'feed', component: FeedComponent },
+  { path: '**', redirectTo: '' } // qualquer rota desconhecida vai pro login
 ];
 
 @NgModule({

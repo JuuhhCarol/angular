@@ -1,3 +1,17 @@
-<div class="feed">
-  <app-card *ngFor="let card of cards" [title]="card.title" [image]="card.image"></app-card>
+<div class="feed-container">
+
+  <div class="nova-publicacao">
+    <input type="text" placeholder="URL da imagem" [(ngModel)]="imagem" />
+    <input type="text" placeholder="Texto do post" [(ngModel)]="texto" />
+    <button (click)="publicar()">Publicar</button>
+  </div>
+
+  <div class="posts">
+    <app-card 
+      *ngFor="let post of postService.getPosts()"
+      [imagem]="post.imagem"
+      [texto]="post.texto">
+    </app-card>
+  </div>
+
 </div>

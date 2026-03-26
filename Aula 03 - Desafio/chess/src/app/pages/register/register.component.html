@@ -1,24 +1,15 @@
-<div class="login-container">
-  <h2>Login</h2>
+<div class="container">
 
-  <form [formGroup]="form" (ngSubmit)="login()">
+  <div class="box">
+    <h2>Login</h2>
 
-    <!-- Campo de CPF -->
-    <input
-      type="text"
-      formControlName="cpf"
-      placeholder="Digite seu CPF"
-      [class.invalid]="form.get('cpf')?.invalid && form.get('cpf')?.touched"
-    />
+    <app-cpf-input
+      (cpfValido)="receberValidacao($event)">
+    </app-cpf-input>
 
-    <!-- Mensagem de erro -->
-    <div class="error" *ngIf="form.get('cpf')?.invalid && form.get('cpf')?.touched">
-      CPF inválido
-    </div>
-
-    <!-- Botão de login -->
-    <button type="submit" [disabled]="form.invalid">
+    <button (click)="entrar()" [disabled]="!cpfValido">
       Entrar
     </button>
-  </form>
+  </div>
+
 </div>

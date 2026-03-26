@@ -7,6 +7,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CpfInputComponent } from './components/cpf-input/cpf-input.component';
 import { CardComponent } from './components/card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,14 +16,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeedComponent,
     RegisterComponent,
     CpfInputComponent,
-    CardComponent    // ✅ só componentes aqui
+    CardComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule  // ✅ módulos vão aqui
+    ReactiveFormsModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

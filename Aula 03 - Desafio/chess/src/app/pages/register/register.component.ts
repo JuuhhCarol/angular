@@ -1,31 +1,28 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { CpfInputComponent } from '../../components/cpf-input/cpf-input.component';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  cpfValido: boolean = false;
 
-  // Criando formulário com validação customizada
-  form = this.fb.group({
-    cpf: ['', [this.cpfValidator.bind(this)]] // conecta o validador
-  });
+  constructor(private router: Router) {}
 
-  cpfValidator(control: any) {
-    const cpfComponent = new CpfInputComponent();
-    return cpfComponent.cpfValidator(control);
+  receberValidacao(valido: boolean) {
+    this.cpfValido = valido;
   }
 
-  login() {
-  if (this.form.valid) {
-    // CPF válido → navegar para feed/posts
+  entrar() {
+    if (!this.cpfValido) {
+      alert('CPF inválido');
+      return;
+    }
+
+    // Redireciona para o feed
     this.router.navigate(['/feed']);
   }
-}
 }
